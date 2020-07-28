@@ -1,0 +1,12 @@
+pipelines:
+  branches:
+    #master:
+      #- step:
+       #   image: atlassian/pipelines-awscli
+       #   script:
+       #     - aws deploy push --region eu-west-1 --application-name web-databeaver-v3-prod --s3-location s3://databeaver-v3-frontend-bitbucket-pipeline/databeaver-v3-frontend-prod.zip
+    staging:
+      - step:
+          image: atlassian/pipelines-awscli
+          script:
+            - aws deploy push --region us-east-1 --application-name nibss-staging --s3-location s3://nibss-web-staging/npay-frontend-staging.zip
